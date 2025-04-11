@@ -1,0 +1,17 @@
+{% extends '@ZedUi/Layout/merchant-layout-main.twig' %}
+{% import _self as view %}
+
+{% block headSubTitle %}
+    {{- 'CUstomer' | trans -}}
+{% endblock %}
+
+{% block content %}
+    <h1 title>{{ 'Customer' | trans }}</h1>
+    <web-mp-customers-table config='{{ guiTableConfiguration(customerTableConfiguration) }}' table-id="">
+    </web-mp-customers-table>
+{% endblock %}
+
+{% block footerJs %}
+    {{ view.importJsBundle('customer-merchant-portal-gui', importConfig) }}
+    {{ parent() }}
+{% endblock %}
